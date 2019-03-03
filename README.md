@@ -1,16 +1,16 @@
 # Visual Studio Linux Build Box
 
-[![Docker Build Status](https://img.shields.io/docker/build/ducatel/visual-studio-linux-build-box.svg)](https://hub.docker.com/r/ducatel/visual-studio-linux-build-box/) 
-[![Docker Stars](https://img.shields.io/docker/stars/ducatel/visual-studio-linux-build-box.svg)](https://hub.docker.com/r/ducatel/visual-studio-linux-build-box/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ducatel/visual-studio-linux-build-box.svg)](https://hub.docker.com/r/ducatel/visual-studio-linux-build-box/)
+[![Docker Build Status](https://img.shields.io/docker/build/bryanayers/visual-studio-linux-build-box.svg)](https://hub.docker.com/r/bryanayers/visual-studio-linux-build-box/) 
+[![Docker Stars](https://img.shields.io/docker/stars/bryanayers/visual-studio-linux-build-box.svg)](https://hub.docker.com/r/bryanayers/visual-studio-linux-build-box/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/bryanayers/visual-studio-linux-build-box.svg)](https://hub.docker.com/r/bryanayers/visual-studio-linux-build-box/)
 
 This image is used to allows Visual Studio to build a Linux application.
 The official Microsoft tutorial [Visual C++ for Linux Development](https://blogs.msdn.microsoft.com/vcblog/2016/03/30/visual-c-for-linux-development/).
 
 ## Version
 
-* Ubuntu 18.04 -> `ducatel/visual-studio-linux-build-box:18.04`, `ducatel/visual-studio-linux-build-box:latest`
-* Ubuntu 16.04 -> `ducatel/visual-studio-linux-build-box:16.04`
+* Ubuntu 18.04 -> `bryanayers/visual-studio-linux-build-box:18.04`, `bryanayers/visual-studio-linux-build-box:latest`
+* Ubuntu 16.04 -> `bryanayers/visual-studio-linux-build-box:16.04`
 
 ## How to use it
  
@@ -23,7 +23,7 @@ The official Microsoft tutorial [Visual C++ for Linux Development](https://blogs
 
 So to launch the build box, execute this command on your linux docker host
  ```sh
- docker run -d -p 12345:22 --security-opt seccomp:unconfined ducatel/visual-studio-linux-build-box
+ docker run -d -p 12345:22 --security-opt seccomp:unconfined bryanayers/visual-studio-linux-build-box
  ```
 
 ### How connect to your Visual Studio
@@ -45,7 +45,7 @@ You can extends the build image to include some dependencies.
 For example, the mongo-c driver
 
 ```Dockerfile
-FROM ducatel/visual-studio-linux-build-box
+FROM bryanayers/visual-studio-linux-build-box
 
 RUN apt-get update && \
     apt-get install -y libxml2-dev pkg-config libssl-dev libsasl2-dev automake autoconf libtool && \
